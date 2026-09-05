@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zohaib Ali — Computer Science Graduate &amp; Researcher</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1a2029;
+    --ink-soft:#3b4250;
+    --paper:#f2f1ec;
+    --paper-raised:#ffffff;
+    --line:#d8d6cd;
+    --teal:#1f6f5c;
+    --teal-deep:#154d40;
+    --brass:#a3763d;
+  }
+
+  *{ box-sizing:border-box; }
+
+  html{ scroll-behavior:smooth; }
+
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'IBM Plex Sans', sans-serif;
+    font-size:16px;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  h1,h2,h3{
+    font-family:'Source Serif 4', serif;
+    font-weight:600;
+    color:var(--ink);
+    margin:0;
+  }
+
+  a{ color:var(--teal-deep); text-decoration:none; border-bottom:1px solid rgba(31,111,92,0.35); }
+  a:hover{ border-bottom-color:var(--teal-deep); }
+
+  .wrap{
+    max-width:1080px;
+    margin:0 auto;
+    padding:0 28px;
+  }
+
+  /* ---------- Header ---------- */
+  header{
+    padding:64px 0 44px;
+    border-bottom:1px solid var(--line);
+  }
+  .header-row{
+    display:flex;
+    align-items:center;
+    gap:24px;
+    flex-wrap:wrap;
+  }
+  .mark{
+    flex:0 0 auto;
+    width:84px;
+    height:84px;
+    border-radius:50%;
+    border:1.5px solid var(--ink);
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .mark img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center 20%;
+  }
+  header h1{
+    font-size:clamp(2.1rem, 4vw, 2.9rem);
+    letter-spacing:-0.01em;
+  }
+  .role{
+    margin-top:6px;
+    font-size:1.05rem;
+    color:var(--teal-deep);
+    font-weight:500;
+  }
+  .location-line{
+    margin-top:14px;
+    font-size:0.95rem;
+    color:var(--ink-soft);
+  }
+
+  /* ---------- Layout ---------- */
+  .layout{
+    display:grid;
+    grid-template-columns:280px 1fr;
+    gap:56px;
+    padding:48px 0 80px;
+  }
+
+  aside{ align-self:start; position:sticky; top:36px; }
+
+  .side-block{ margin-bottom:36px; }
+  .side-block h3{
+    font-size:0.98rem;
+    color:var(--ink);
+    padding-bottom:8px;
+    border-bottom:1px solid var(--line);
+    margin-bottom:14px;
+  }
+
+  .contact-list{ list-style:none; margin:0; padding:0; font-size:0.93rem; }
+  .contact-list li{ margin-bottom:9px; color:var(--ink-soft); word-break:break-word; }
+  .contact-list li a{ color:var(--ink-soft); border-bottom:1px solid var(--line); }
+  .contact-list li a:hover{ color:var(--teal-deep); border-bottom-color:var(--teal-deep); }
+
+  .skill-group{ margin-bottom:14px; }
+  .skill-group .label{
+    font-size:0.8rem;
+    color:var(--brass);
+    font-weight:600;
+    margin-bottom:4px;
+  }
+  .skill-group .items{
+    font-size:0.9rem;
+    color:var(--ink-soft);
+    line-height:1.5;
+  }
+
+  .lang-row{
+    display:flex;
+    justify-content:space-between;
+    font-size:0.9rem;
+    color:var(--ink-soft);
+    padding:6px 0;
+    border-bottom:1px dashed var(--line);
+  }
+  .lang-row:last-child{ border-bottom:none; }
+  .lang-row span:last-child{ color:var(--teal-deep); font-weight:500; }
+
+  .cert-list{ list-style:none; margin:0; padding:0; font-size:0.88rem; color:var(--ink-soft); }
+  .cert-list li{ padding:8px 0; border-bottom:1px dashed var(--line); }
+  .cert-list li:last-child{ border-bottom:none; }
+  .cert-list a{ color:var(--ink-soft); border-bottom:1px solid var(--line); }
+  .cert-list a:hover{ color:var(--teal-deep); border-bottom-color:var(--teal-deep); }
+
+  /* ---------- Document gallery ---------- */
+  .doc-grid{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:18px;
+  }
+  .doc-subhead{
+    font-size:0.98rem;
+    color:var(--brass);
+    font-weight:600;
+    margin:0 0 14px;
+  }
+  .doc-group{ margin-bottom:32px; }
+  .doc-group:last-child{ margin-bottom:0; }
+  .doc-card{
+    display:block;
+    color:inherit;
+    border:1px solid var(--line);
+    background:var(--paper-raised);
+  }
+  .doc-card:hover{ border-color:var(--teal); }
+  .doc-thumb{
+    display:block;
+    width:100%;
+    aspect-ratio:4/3;
+    object-fit:contain;
+    background:#fafaf7;
+    border-bottom:1px solid var(--line);
+  }
+  .doc-caption{
+    padding:12px 14px;
+    font-size:0.86rem;
+    color:var(--ink-soft);
+  }
+  .doc-caption .doc-name{
+    display:block;
+    font-family:'Source Serif 4', serif;
+    font-size:0.95rem;
+    color:var(--ink);
+    margin-bottom:2px;
+  }
+  @media (max-width: 600px){
+    .doc-grid{ grid-template-columns:1fr 1fr; }
+  }
+  @media (max-width: 380px){
+    .doc-grid{ grid-template-columns:1fr; }
+  }
+
+  .scholar-link{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    margin-top:14px;
+    font-size:0.92rem;
+    color:var(--teal-deep);
+    font-weight:500;
+  }
+
+  /* ---------- Main content ---------- */
+  main section{ margin-bottom:46px; }
+  main section:last-child{ margin-bottom:0; }
+
+  .section-title{
+    font-size:1.4rem;
+    margin-bottom:18px;
+    padding-bottom:10px;
+    border-bottom:1px solid var(--ink);
+  }
+
+  .summary p{
+    font-size:1.02rem;
+    color:var(--ink-soft);
+    max-width:62ch;
+  }
+
+  .entry{
+    display:grid;
+    grid-template-columns:1fr auto;
+    gap:12px;
+    padding:18px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .entry:last-child{ border-bottom:none; padding-bottom:0; }
+  .entry:first-child{ padding-top:0; }
+
+  .entry-title{ font-size:1.05rem; font-weight:600; color:var(--ink); font-family:'Source Serif 4', serif; }
+  .entry-org{ font-size:0.94rem; color:var(--teal-deep); margin-top:2px; }
+  .entry-date{
+    font-size:0.85rem;
+    color:var(--ink-soft);
+    white-space:nowrap;
+    padding-top:3px;
+  }
+  .entry-detail{
+    grid-column:1 / -1;
+    margin-top:10px;
+  }
+  .entry-detail ul{ margin:0; padding-left:19px; color:var(--ink-soft); font-size:0.94rem; }
+  .entry-detail li{ margin-bottom:5px; }
+
+  .project{
+    padding:16px 0 16px 18px;
+    border-left:2px solid var(--line);
+    margin-bottom:6px;
+  }
+  .project:hover{ border-left-color:var(--teal); }
+  .project h3{ font-size:1.02rem; margin-bottom:8px; }
+  .project ul{ margin:0; padding-left:19px; color:var(--ink-soft); font-size:0.93rem; }
+  .project li{ margin-bottom:5px; }
+
+  .pub-list{ list-style:none; margin:0; padding:0; counter-reset:pub; }
+  .pub-list li{
+    counter-increment:pub;
+    display:flex;
+    gap:14px;
+    padding:16px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .pub-list li:last-child{ border-bottom:none; padding-bottom:0; }
+  .pub-list li::before{
+    content:"[" counter(pub) "]";
+    flex:0 0 auto;
+    font-family:'Source Serif 4', serif;
+    color:var(--brass);
+    font-size:0.95rem;
+    padding-top:2px;
+  }
+  .pub-title{ font-weight:600; font-family:'Source Serif 4', serif; font-size:0.99rem; }
+  .pub-meta{ font-size:0.87rem; color:var(--ink-soft); margin-top:4px; font-style:italic; }
+  .pub-extra{ font-size:0.85rem; color:var(--ink-soft); margin-top:4px; }
+
+  footer{
+    border-top:1px solid var(--line);
+    padding:28px 0 50px;
+    font-size:0.85rem;
+    color:var(--ink-soft);
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 820px){
+    .layout{ grid-template-columns:1fr; gap:0; }
+    aside{ position:static; order:2; margin-top:40px; }
+    main{ order:1; }
+  }
+
+  @media (max-width: 480px){
+    header{ padding:44px 0 32px; }
+    .layout{ padding:32px 0 56px; }
+    .entry{ grid-template-columns:1fr; }
+    .entry-date{ padding-top:0; }
+  }
+
+  @media print{
+    body{ background:#fff; }
+    aside{ position:static; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <div class="header-row">
+      <div class="mark"><img src="assets/profile_picture.jpeg" alt="Zohaib Ali"></div>
+      <div>
+        <h1>Zohaib Ali</h1>
+        <div class="role">Computer Science Graduate · Young Researcher</div>
+        <a class="scholar-link" href="https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=okwfaYMAAAAJ" target="_blank" rel="noopener">View Google Scholar profile →</a>
+      </div>
+    </div>
+    <div class="location-line">Khanpur, District Rahim Yar Khan, Punjab, Pakistan</div>
+  </header>
+
+  <div class="layout">
+
+    <aside>
+      <div class="side-block">
+        <h3>Contact</h3>
+        <ul class="contact-list">
+          <li>+92 326 9049688</li>
+          <li>Khanpur, Rahim Yar Khan, Punjab, Pakistan</li>
+          <li><a href="https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=okwfaYMAAAAJ" target="_blank" rel="noopener">Google Scholar profile</a></li>
+        </ul>
+      </div>
+
+      <div class="side-block">
+        <h3>Skills</h3>
+        <div class="skill-group">
+          <div class="label">Programming</div>
+          <div class="items">Python, JavaScript, PHP, C++</div>
+        </div>
+        <div class="skill-group">
+          <div class="label">Frameworks &amp; Tools</div>
+          <div class="items">OpenCV, scikit-learn, PyTorch, TensorFlow, Git</div>
+        </div>
+        <div class="skill-group">
+          <div class="label">AI &amp; Data Science</div>
+          <div class="items">Signal Processing, Deep Learning, Machine Learning, Image Processing, LLMs, Intelligent Wireless Communication</div>
+        </div>
+        <div class="skill-group">
+          <div class="label">Databases</div>
+          <div class="items">MySQL, MongoDB</div>
+        </div>
+        <div class="skill-group">
+          <div class="label">Web Development</div>
+          <div class="items">HTML/CSS, Web Application Development</div>
+        </div>
+      </div>
+
+      <div class="side-block">
+        <h3>Languages</h3>
+        <div class="lang-row"><span>Urdu</span><span>Native</span></div>
+        <div class="lang-row"><span>English — Writing</span><span>C2</span></div>
+        <div class="lang-row"><span>English — Speaking</span><span>C1</span></div>
+        <div class="lang-row"><span>English — Reading</span><span>C1</span></div>
+      </div>
+
+      <div class="side-block">
+        <h3>Certificates</h3>
+        <ul class="cert-list">
+          <li><a href="assets/datacamp_supervised.pdf" target="_blank" rel="noopener">Supervised Learning with scikit-learn — DataCamp</a></li>
+          <li><a href="assets/datacamp_unsupervised.pdf" target="_blank" rel="noopener">Unsupervised Learning in Python — DataCamp</a></li>
+          <li><a href="assets/soft_skill.pdf" target="_blank" rel="noopener">Soft Skills Training — OEC &amp; ICMPD</a></li>
+          <li><a href="assets/appdesk_internship.pdf" target="_blank" rel="noopener">Internship Completion — App Desk Inc.</a></li>
+          <li><a href="assets/certificate_ijsret.jpeg" target="_blank" rel="noopener">Certificate of Publication — IJSRET, Vol. 12</a></li>
+          <li><a href="assets/certificate_ijtret.pdf" target="_blank" rel="noopener">Certificate of Publication — IJTRET, Vol. 10</a></li>
+          <li><a href="assets/teacher_appreciation.jpeg" target="_blank" rel="noopener">Teacher Appreciation Certificate</a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <main>
+      <section class="summary">
+        <h2 class="section-title">Profile</h2>
+        <p>Computer Science graduate with hands-on experience applying programming and analytical methods to real-world research problems. Skilled in developing and refining computational techniques, with a strong foundation in both theoretical concepts and practical project deployment, including web development. Author of two published research papers spanning signal processing, pattern recognition, and AI. Currently seeking admission to a Master's (MS) program, motivated to contribute to innovative research through clear thinking, teamwork, and dedication.</p>
+      </section>
+
+      <section>
+        <h2 class="section-title">Education</h2>
+
+        <div class="entry">
+          <div>
+            <div class="entry-title">BS in Computer Science</div>
+            <div class="entry-org">The Islamia University of Bahawalpur, Pakistan</div>
+          </div>
+          <div class="entry-date">2021 – 2025</div>
+          <div class="entry-detail">
+            <ul>
+              <li>Coursework: Artificial Intelligence, Machine Learning, Deep Learning, Probability &amp; Statistics, Data Structures &amp; Algorithms, Linear Algebra, Database Management Systems, Web Engineering, Android App Development.</li>
+              <li><a href="assets/degree_iub.jpeg" target="_blank" rel="noopener">View degree certificate</a> · <a href="assets/official_transcript.pdf" target="_blank" rel="noopener">View official transcript</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="entry">
+          <div>
+            <div class="entry-title">Intermediate in Computer Science (ICS)</div>
+            <div class="entry-org">Alpine College of Science for Boys, Khanpur</div>
+          </div>
+          <div class="entry-date">2019 – 2021</div>
+          <div class="entry-detail">
+            <ul><li><a href="assets/sanad_inter.jpg" target="_blank" rel="noopener">View certificate</a></li></ul>
+          </div>
+        </div>
+
+        <div class="entry">
+          <div>
+            <div class="entry-title">Matriculation in Computer Science</div>
+            <div class="entry-org">Alpine Boys Secondary School of Sciences, Khanpur</div>
+          </div>
+          <div class="entry-date">2017 – 2019</div>
+          <div class="entry-detail">
+            <ul><li><a href="assets/sanad_matric.jpg" target="_blank" rel="noopener">View certificate</a></li></ul>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="section-title">Experience</h2>
+
+        <div class="entry">
+          <div>
+            <div class="entry-title">Computer Science Lecturer</div>
+            <div class="entry-org">Govt. Taraqi Taleem Secondary School, Pakistan</div>
+          </div>
+          <div class="entry-date">2025 – Current</div>
+          <div class="entry-detail">
+            <ul>
+              <li>Teach Computer Science and ICT to senior high school students.</li>
+              <li>Cover both theoretical concepts and practical lab work to build strong foundational skills.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="entry">
+          <div>
+            <div class="entry-title">Web Application Developer</div>
+            <div class="entry-org">App Desk Inc (PSEB), Rawalpindi, Pakistan</div>
+          </div>
+          <div class="entry-date">Feb – Aug 2025</div>
+          <div class="entry-detail">
+            <ul>
+              <li>Developed and maintained web applications using PHP and JavaScript.</li>
+              <li>Managed database queries and backend data handling for administrative systems.</li>
+              <li>Ensured accurate, secure, and efficient data flow across the administrative system.</li>
+              <li><a href="assets/appdesk_internship.pdf" target="_blank" rel="noopener">View internship completion certificate</a></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="section-title">Projects</h2>
+
+        <div class="project">
+          <h3>Skin Disease Detection via Image Processing</h3>
+          <ul>
+            <li>Developed a diagnostic system using image processing and machine learning to analyze skin conditions.</li>
+            <li>Engineered the full pipeline, from preprocessing to model training, focusing on algorithm accuracy.</li>
+          </ul>
+        </div>
+
+        <div class="project">
+          <h3>Machine Learning Algorithms</h3>
+          <ul>
+            <li>Experimented with supervised and unsupervised learning models using Python and scikit-learn.</li>
+            <li>Built and tested ML pipelines for classification, clustering, and prediction accuracy optimization.</li>
+          </ul>
+        </div>
+
+        <div class="project">
+          <h3>AI &amp; Algorithm Projects</h3>
+          <ul>
+            <li>Implemented algorithm design techniques including the Karatsuba Algorithm and tree-based methods.</li>
+            <li>Built models for binary classification and applied deep learning fundamentals.</li>
+          </ul>
+        </div>
+
+        <div class="project">
+          <h3>Web Development with Database Integration</h3>
+          <ul>
+            <li>Built and configured database connections for local and live server environments.</li>
+            <li>Designed backend systems to manage data flow, user authentication, and performance optimization.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="section-title">Documents</h2>
+
+        <div class="doc-group">
+          <div class="doc-subhead">Academic Records</div>
+          <div class="doc-grid">
+            <a class="doc-card" href="assets/degree_iub.jpeg" target="_blank" rel="noopener">
+              <img class="doc-thumb" src="assets/degree_iub.jpeg" alt="BS Computer Science degree certificate">
+              <div class="doc-caption"><span class="doc-name">BS Degree</span>Islamia University of Bahawalpur</div>
+            </a>
+            <a class="doc-card" href="assets/official_transcript.pdf" target="_blank" rel="noopener">
+              <img class="doc-thumb" src="assets/transcript_thumb.jpg" alt="Official academic transcript" style="object-position:top;">
+              <div class="doc-caption"><span class="doc-name">Official Transcript</span>Full 8-semester record</div>
+            </a>
+            <a class="doc-card" href="assets/sanad_inter.jpg" target="_blank" rel="noopener">
+              <img class="doc-thumb" src="assets/sanad_inter.jpg" alt="Intermediate certificate">
+              <div class="doc-caption"><span class="doc-name">Intermediate Certificate</span>ICS, IUB Board</div>
+            </a>
+            <a class="doc-card" href="assets/sanad_matric.jpg" target="_blank" rel="noopener">
+              <img class="doc-thumb" src="assets/sanad_matric.jpg" alt="Matriculation certificate">
+              <div class="doc-caption"><span class="doc-name">Matriculation Certificate</span>Alpine Boys Secondary School</div>
+            </a>
+            <a class="doc-card" href="assets/english_proficiency.jpg" target="_blank" rel="noopener">
+              <img class="doc-thumb" src="assets/english_proficiency.jpg" alt="English proficiency certificate">
+              <div class="doc-caption"><span class="doc-name">English Proficiency</span>Islamia University of Bahawalpur</div>
+            </a>
+          </div>
+        </div>
+
+        <div class="doc-group">
+          <div class="doc-subhead">Certifications &amp; Awards</div>
+          <div class="doc-grid">
+            <a class="doc-card" href="assets/certificate_ijsret.jpeg" target="_blank" rel="noopener">
+              <img class="doc-thumb" src="assets/certificate_ijsret.jpeg" alt="Certificate of Publication, IJSRET">
+              <div class="doc-caption"><span class="doc-name">Publication Certificate</span>IJSRET, Vol. 12</div>
+            </a>
+            <a class="doc-card" href="assets/certificate_ijtret.pdf" target="_blank" rel="noopener">
+              <img class="doc-thumb" src="assets/certificate_ijtret.png" alt="Certificate of Publication, IJTRET">
+              <div class="doc-caption"><span class="doc-name">Publication Certificate</span>IJTRET, Vol. 10</div>
+            </a>
+            <a class="doc-card" href="assets/datacamp_supervised.pdf" target="_blank" rel="noopener">
+              <img class="doc-thumb" src="assets/datacamp_supervised.png" alt="Supervised Learning with scikit-learn certificate">
+              <div class="doc-caption"><span class="doc-name">Supervised Learning</span>DataCamp</div>
+            </a>
+            <a class="doc-card" href="assets/datacamp_unsupervised.pdf" target="_blank" rel="noopener">
+              <img class="doc-thumb" src="assets/datacamp_unsupervised.png" alt="Unsupervised Learning in Python certificate">
+              <div class="doc-caption"><span class="doc-name">Unsupervised Learning</span>DataCamp</div>
+            </a>
+            <a class="doc-card" href="assets/soft_skill.pdf" target="_blank" rel="noopener">
+              <img class="doc-thumb" src="assets/soft_skill.png" alt="Soft Skills Training certificate">
+              <div class="doc-caption"><span class="doc-name">Soft Skills Training</span>OEC &amp; ICMPD</div>
+            </a>
+            <a class="doc-card" href="assets/appdesk_internship.pdf" target="_blank" rel="noopener">
+              <img class="doc-thumb" src="assets/appdesk_internship.png" alt="App Desk internship completion certificate">
+              <div class="doc-caption"><span class="doc-name">Internship Certificate</span>App Desk Inc.</div>
+            </a>
+            <a class="doc-card" href="assets/teacher_appreciation.jpeg" target="_blank" rel="noopener">
+              <img class="doc-thumb" src="assets/teacher_appreciation.jpeg" alt="Teacher Appreciation certificate">
+              <div class="doc-caption"><span class="doc-name">Teacher Appreciation</span>Govt. Taraqi Taleem School</div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="section-title">Publications</h2>
+        <ul class="pub-list">
+          <li>
+            <div>
+              <div class="pub-title">Lightweight Deep Learning Framework for Real-Time Image Signal Processing and Denoising</div>
+              <div class="pub-meta">IJSRET, Vol. 12, Issue 3, 2026 · pp. 1–5 · ISSN 2395-566X</div>
+              <div class="pub-extra"><a href="https://doi.org/10.5281/zenodo.21233013" target="_blank" rel="noopener">DOI: 10.5281/zenodo.21233013</a></div>
+            </div>
+          </li>
+          <li>
+            <div>
+              <div class="pub-title">Large Language Model-Enabled Graph Algorithms and Graph Computing: Techniques and Applications</div>
+              <div class="pub-meta">IJTRET, Vol. 10, Issue 3, 2026 · pp. 55–62 · ISSN 2582-0958</div>
+              <div class="pub-extra"><a href="https://www.trendytechjournals.com/ijtret/volume10/issue3-5.pdf" target="_blank" rel="noopener">View publication</a></div>
+            </div>
+          </li>
+          <li>
+            <div>
+              <div class="pub-title">Generative AI for Synthetic Image Data Augmentation in Low-Resource Pattern Recognition</div>
+              <div class="pub-meta">JETIR, 2026 · ISSN 2349-5162 · In Press</div>
+            </div>
+          </li>
+        </ul>
+        <a class="scholar-link" href="https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=okwfaYMAAAAJ" target="_blank" rel="noopener">Full publication list on Google Scholar →</a>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    References available upon request. Last updated 2026.
+  </footer>
+</div>
+
+</body>
+</html>
