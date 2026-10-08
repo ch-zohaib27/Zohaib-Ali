@@ -131,6 +131,13 @@ dialog#lb::backdrop{background:rgba(6,9,24,.88);backdrop-filter:blur(6px)}
 .at::before{content:"";position:absolute;top:-10px;left:18px;width:14px;height:34px;border:3px solid var(--gold);border-radius:8px;border-bottom-color:transparent;transform:rotate(12deg);z-index:2;filter:drop-shadow(0 2px 2px rgba(0,0,0,.35))}
 .at .gb{border-radius:8px;overflow:hidden}
 .at figcaption{padding:.5rem .3rem .5rem;font-size:.86rem;color:var(--mute);line-height:1.35}
+/* references */
+.refs{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.1rem}
+.ref h3{font-size:1.3rem}
+.ref .meta{margin-bottom:1rem}
+.ref .rl{display:flex;align-items:center;gap:.8rem;margin-top:.6rem;padding:.7rem 1rem;border-radius:14px;border:1px solid var(--line);background:var(--card);text-decoration:none;color:var(--ink);font-weight:500;overflow-wrap:anywhere;transition:.25s}
+.ref .rl i{font-style:normal;font-size:1.15rem}
+.ref .rl:hover{background:var(--clean);color:#06202a;border-color:transparent;transform:translateY(-2px)}
 footer{margin-top:6rem;padding:4rem 0 3rem;text-align:center;border-top:1px solid var(--line);background:linear-gradient(transparent,var(--bg2))}
 footer h2{font-size:clamp(2.2rem,6vw,4.4rem)}
 footer .btns{justify-content:center}
@@ -141,7 +148,7 @@ footer .btns{justify-content:center}
 </head>
 <body>
 <nav><div class="wrap"><a class="logo" href="#top"><i></i>Zohaib Ali</a>
-<a class="l" href="#about">About</a><a class="l" href="#experience">Experience</a><a class="l" href="#research">Research</a><a class="l" href="#projects">Projects</a><a class="l" href="#skills">Skills</a><a class="l" href="#contact">Contact</a>
+<a class="l" href="#about">About</a><a class="l" href="#experience">Experience</a><a class="l" href="#research">Research</a><a class="l" href="#projects">Projects</a><a class="l" href="#skills">Skills</a><a class="l" href="#references">References</a><a class="l" href="#contact">Contact</a>
 <button id="theme" aria-label="Switch light or dark theme">◐</button></div></nav>
 
 <header class="hero" id="top"><div class="wrap">
@@ -210,8 +217,17 @@ footer .btns{justify-content:center}
 
 <section id="certs"><h2>Courses and training</h2><p class="lead">Short courses from DataCamp and a soft skills program. Tap any certificate to enlarge it.</p>
 <div class="att wide"><figure class="at"><button type="button" class="gb" aria-label="Enlarge Supervised Learning with scikit-learn"><img loading="lazy" src="assets/supervised-learning-with-scikit-learn.jpg" alt="Supervised Learning with scikit-learn"></button><figcaption>Supervised Learning with scikit-learn · DataCamp, Nov 2024</figcaption></figure><figure class="at"><button type="button" class="gb" aria-label="Enlarge Unsupervised Learning in Python"><img loading="lazy" src="assets/unsupervised-learning-in-python.jpg" alt="Unsupervised Learning in Python"></button><figcaption>Unsupervised Learning in Python · DataCamp, Jan 2025</figcaption></figure><figure class="at"><button type="button" class="gb" aria-label="Enlarge Soft Skills Training"><img loading="lazy" src="assets/soft-skills-training.jpg" alt="Soft Skills Training"></button><figcaption>Soft Skills Training · OEC and ICMPD, Dec 2025</figcaption></figure></div>
-<p class="small">References from Dr. Humera Arshad and Dr. Waheed Anwar (Associate Professors, IUB) are available on request.</p>
 <dialog id="lb"><button id="lbx" aria-label="Close">✕</button><img id="lbi" alt=""><p id="lbt"></p></dialog></section>
+
+<section id="references"><h2>References</h2><p class="lead">Academic references from The Islamia University of Bahawalpur. Tap an email or phone number to contact them directly.</p>
+<div class="refs">
+<div class="card ref"><h3>Dr. Humera Arshad</h3><div class="meta">Associate Professor · The Islamia University of Bahawalpur</div>
+<a class="rl" href="mailto:humera.arshad@iub.edu.pk"><i aria-hidden="true">✉</i><span>humera.arshad@iub.edu.pk</span></a>
+<a class="rl" href="tel:+923006812296"><i aria-hidden="true">☎</i><span>+92 300 6812296</span></a></div>
+<div class="card ref"><h3>Dr. Waheed Anwar</h3><div class="meta">Associate Professor · The Islamia University of Bahawalpur</div>
+<a class="rl" href="mailto:waheed@iub.edu.pk"><i aria-hidden="true">✉</i><span>waheed@iub.edu.pk</span></a>
+<a class="rl" href="tel:+923137754000"><i aria-hidden="true">☎</i><span>+92 313 7754000</span></a></div>
+</div></section>
 </main>
 
 <footer id="contact"><div class="wrap">
